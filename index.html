@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/output.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
+    <title>Учу Tailwind</title>
+</head>
+<body>
+   <!--
+    <header  class="mt-3 mx-4">
+        <a class="uppercase font-bold text-purple-800" href="#">wedDev</a>
+        <nav>
+            <ul class="font-semibold flex justify-around text-gray-400">
+                <li><a class="inline-block py-3 px-2 border-b-2 border-transparent
+                     hover:border-purple-600 hover:text-purple-600" 
+                     href="#">Home</a></li>
+                <li><a class="inline-block py-3 px-2 border-b-2 border-transparent
+                     hover:border-purple-600 hover:text-purple-600" 
+                     href="#">About</a></li>
+                <li><a class="inline-block py-3 px-2 border-b-2 border-transparent
+                     hover:border-purple-600 hover:text-purple-600"
+                      href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="h-20 w-20 bg-red-200 block my-0 mx-auto">
+        <div class="text-yellow-800 ">ыыПривет</div>
+    </div>
+   --> 
+
+    
+<header>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse ">
+              <span class="self-center text-xl leading-[1.25rem] font-semibold whitespace-nowrap dark:text-white">Свято-Никольский храм<br>
+               <p class="text-[12px]">д. Телуша Бобруйская епархия БПЦ</p> </span>
+              
+          </a>
+        
+
+          <div x-data="{ isOpen: false }">
+            <!-- Toggle Button -->
+
+            <button @click="isOpen = !isOpen" data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            
+            <!-- Menu
+                x-show="isOpen"  @click.away="isOpen = false" x-transition
+
+                <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer"> <img x-show="isOpen" @click="isOpen = false" src="img/close.svg" ></li>
+            -->
+
+
+            <div x-show="isOpen"  @click.away="isOpen = false" x-transition class="absolute top-0 left-0 ">
+
+                <div class="relative h-svh w-svw z-50">
+                    <div class="absolute inset-0 "> 
+                       
+                        <ul  class="mt-2 bg-white shadow-lg h-svh flex flex-col justify-around items-center p-20">
+                            <div class="absolute top-5 right-12 w-[38px] h-[37px]" @click="isOpen=false">
+                                <img src="img/close.svg" alt="">
+                            </div>
+                            <li class="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Главная</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Новости</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Расписание</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Экономисса</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Чудеса Экономиссы</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Заказать</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">О нас</li>
+                            <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Конакты</li>
+                        </ul>
+                    </div>
+                  </div>
+            </div>
+           
+
+          </div>
+
+
+
+          <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <ul class="flex flex-col font-medium text-xl p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-7 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                 <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Главная</a>
+                </li>
+                <li>
+                     <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Новости</a>
+                </li>
+                
+                <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Экономисса</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">О нас</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Контакты</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="btn_header">
+        <section class="text-gray-600 body-font">
+            <div class="max-w-screen-xl flex flex-wrap justify-between mx-auto py-4">
+
+                <a class="inline-block w-[49%] h-[50px] bg-[rgb(248,248,248)]  hover:cursor-pointer rounded-[3px]" href="#">
+                    <div class="flex justify-around content-center my-[10px]">
+                        <img class="inline-block h-[32px] w-[32px]" src="img/cross.png" >
+                        <span  class="text-black inline-block my-[2px] text-[14px] md:text-[16px]">Заказать помновение</span>
+                    </div>
+                </a>
+                <a class="inline-block w-[49%] h-[50px] bg-[rgb(248,248,248)]  hover:cursor-pointer rounded-[3px]" href="#">
+                    <div class="flex justify-around content-center my-[10px]">
+                        <img class="inline-block h-[32px] w-[32px]" src="img/time.png" >
+                        <span class="text-black inline-block my-[2px] text-[14px] md:text-[16px]">Расписание богослужений</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div> 
+    
+</header>
+<main>
+    <section class="text-gray-600 body-font">
+        <div class="max-w-screen-xl flex flex-col justify-center mx-auto p-4 min-h-[320px] md:min-h-[500px] bg-cover" style="background-image: url(img/main-foto.jpg)">
+              <span class="text-white text-4xl mx-auto">Добро пожаловать на сайт нашего прихода</span> 
+              <a class="inline-flex w-[124px] h-[36px] bg-slate-400 rounded-[3px] text-white text-2xl mx-auto mt-[32px]" href="#"><span class="mx-auto">О нас</span></a>         
+        </div>
+    </section>
+    <section class="mt-[32px] bg-[rgb(248,248,248)] max-w-screen-xl mx-auto z-10">
+        <span class="flex justify-center text-black text-2xl pt-[16px]">Наша святыня</span>
+        <!-- <img class="flex justify-center mx-auto w-[380px] h-[480px] mt-[32px]" src="img/s-3.jpg" alt=""> -->
+        <div class="p-16 pt-10">
+            <div class="w-[420px] mx-auto relative" x-data="{
+                activeSlide: 1,
+                slides: [
+                {id:1, src: 'img/s-3.jpg'},
+                {id:2, src: 'img/s-2.jpg'},
+                {id:3, src: 'img/s-1.png'},
+                
+                ]
+                
+            }" x-init="loop">
+                <!-- data loop -->
+                <template x-for="slide in slides" :key="slide.id">
+        
+                    <div x-show="activeSlide === slide.id"
+                        class="w-[420px] h-[480px] flex items-center bg-slate-500 text-white rounded-lg">
+                        <div>
+                            <img class="flex justify-center mx-auto w-[420px] h-[480px]" x-bind:src="slide.src" alt="">
+                        </div>
+                    </div>
+        
+                </template>
+        
+                <!-- back/next -->
+                <div class="absolute inset-0 flex">
+                   
+                    <div class="flex items-center justify-start w-1/2">
+                        <button x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1"
+                            class="bg-slate-100 text-slate-500 transition hover:text-white hover:bg-blue-500 font-bold rounded-full w-12 h-12 flex justify-center shadow items-center -ml-16">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center justify-end w-1/2">
+                        <button x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1"
+                            class="bg-slate-100 text-slate-500 transition hover:text-white hover:bg-blue-500 font-bold rounded-full w-12 h-12 flex justify-center shadow items-center -mr-16">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+        
+                </div>
+        
+                <!-- button -->
+                <div class="absolute w-full flex items-center justify-center px-4 py-5">
+                    <template x-for="slide in slides" :key="slide.id">
+                        <button
+                            class=" h-[20px] w-[20px] mx-2 mb-2 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-slate-600 hover:shadow-lg"
+                            :class="{
+                            'bg-blue-600' : activeSlide === slide.id,
+                            'bg-slate-300' : activeSlide !== slide.id,
+                        }" x-on:click="activeSlide = slide.id"></button>
+                    </template>
+                </div>
+        
+            </div>
+        </div>
+    </section>
+    <section class="my-[96px]  max-w-screen-xl mx-auto">
+        <div class="flex flex-col mb-3 justify-center text-black text-2xl" x-data="{ open: false }">
+            <div class="wraper flex justify-center">
+                <button x-on:click="open = !open">Я в первый раз вижу такую икону. Что это за икона?</button>
+                <div class="flex flex-col justify-center ml-6">
+                    <img x-on:click="open = !open" class="block  w-[24px] h-[24px] cursor-pointer" x-bind:src="open ? 'img/minus.png' : 'img/plus.png' " alt="">
+                </div>
+            </div>
+          
+            <div x-show="open" class="text-xl mt-3 bg-[rgb(248,248,248)] p-4 text-justify">Икона Пресвятой Богородицы, именуемая «Экономисса» или «Домостроительница» находится на Афонской горе, в лавре св. Афанасия. История ее появления такова. В X веке великий Афонский подвижник старец Афанасий основал на Афоне лавру. Однако вскоре из-за сильного голода всем инокам пришлось покинуть обитель в поисках другого пристанища. Остался один старец-игумен, но и сам он в скором времени вынужден был оставить лавру. С железным посохом отправился он в путь, но вдруг увидел идущую навстречу ему Женщину под голубым воздушным покрывалом. Св. Афанасий удивился: откуда могла появиться здесь женщина, если вход им на святую Гору строго воспрещен? Однако Женщина сама спросила его о том, куда он идет. В ответ св. Афанасий задал Ей вопросы: «Кто Ты и как сюда зашла? И зачем Тебе знать, куда я иду? Ты видишь, что я здешний инок». Затем он рассказал все, что случилось с его лаврой, на что Женщина ответила: «Только это! И ради куска хлеба ты бросаешь свою обитель?! Вернись! Я помогу тебе, только не покидай своего уединения и не оставляй своей лавры, которая прославится и займет первое место среди всех афонских обителей». «Но кто же Ты?» – спросил изумленный Афанасий Незнакомку. «Я – Матерь Господа твоего. Я – Та, имени Которой ты посвящаешь свою обитель», – отвечала Женщина. Недоверчиво посмотрел св. Афанасий на Нее и ответил: «Боюсь поверить этому, бывает, что и враг принимает образ светлого ангела. Чем Ты убедишь меня в истинности Твоих слов?». «Видишь этот камень, – услышал старец, – ударь по нему своим посохом и тогда узнаешь, Кто с тобой говорит. Знай же, что с этого времени Я навсегда остаюсь Экономиссой (Домостроительницей) твоей лавры».
+
+                Афанасий ударил посохом по камню, и из него хлынула вода. Пораженный этим чудом св. Афанасий обернулся, чтобы благоговейно припасть к ногам Пресвятой Богородицы, но Ее уже не было. Тогда Афанасий возвратился в свою обитель и к великому изумлению нашел, что кладовые монастыря наполнены всем необходимым. Вскоре в обитель вернулись многие из братии.
+                
+                По воле Царицы Небесной в лавре св. Афанасия с той поры нет эконома, а только подэконом или помощник Экономиссы. В память чудесного явления Богоматери св. Афанасию в лавpe написана икона Пресвятой Богородицы-Домостроительницы. На этой иконе Божия Матерь изображена сидящей на престоле с Богомладенцем на левой руке. С правой стороны престола в молитвенном положении изображен преподобный Михаил Синадский, а с левой – св. Афанасий, держащий в руках вид своей лавры, символизируя этим особое попечение, покровительство и заботу, оказываемые обители Божией Матерью.</div>
+          </div>
+
+          <div class="flex flex-col mb-3 justify-center text-black text-2xl" x-data="{ open: false }">
+            <div class="wraper flex justify-center">
+                <button x-on:click="open = !open">Когда ей молятся? В чем она помогает?</button>
+                <div class="flex flex-col justify-center ml-6">
+                    <img x-on:click="open = !open" class="block  w-[24px] h-[24px] cursor-pointer" x-bind:src="open ? 'img/minus.png' : 'img/plus.png' " alt="">
+                </div>
+            </div>
+          
+            <div x-show="open" class="text-xl mt-3 bg-[rgb(248,248,248)] p-4 text-justify">После обращения к Божией Матери перед ее иконой Экономисса, люди обретают чудесную помощь в разных обстоятельствах, связанных с материальными затруднениями: 
+                <ul class="list-decimal px-5">
+                <li>В сложностях с финансами</li>
+                    <li>Материальных бедствиях</li>
+                        <li>Квартирном вопросе и необходимости получения ипотеки или кредита</li>
+                            <li> Угрозе голода</li>
+                                <li>Невозможности исполнить запланированное дело</li>
+                                    <li>Трудностях в бизнесе и работе</li>
+                                        <li>Об избавлении от уныния</li>
+                                            <li>О спокойствии и мире в семье, на работе, в стране</li>
+                
+            </ul></div>
+          </div>
+
+          <div class="flex flex-col mb-3 justify-center text-black text-2xl" x-data="{ open: false }">
+            <div class="wraper flex justify-center">
+                <button x-on:click="open = !open">Как молиться Божьей Матери Экономиссе?</button>
+                <div class="flex flex-col justify-center ml-6">
+                    <img x-on:click="open = !open" class="block  w-[24px] h-[24px] cursor-pointer" x-bind:src="open ? 'img/minus.png' : 'img/plus.png' " alt="">
+                </div>
+            </div>
+          
+            <div x-show="open" class="text-xl mt-3 bg-[rgb(248,248,248)] p-4 text-justify">
+                <div>
+                    <p>Можно молиться акафистом, но если у вас нету времени, то можно и краткими молитвами</p>
+                    <h3 class="font-semibold mt-3">Тропарь Пресвятой Богородице пред иконой Ея «Экономисса», глас 4</h3> 
+                    <p>Предста́тельство стра́шное и непосты́дное,/ не пре́зри, Блага́я, моли́тв на́ших,/ Всепе́тая Богоро́дице, Ми́лостивая ве́рных Домострои́тельнице,/ утверди́ правосла́вных жи́тельство,/ спаси́ страну́ на́шу/ и всех правосла́вно живу́щих в ней защити́,// зане́ родила́ еси́ Бо́га, Еди́на Благослове́нная.</p>
+                    
+                    <h3 class="font-semibold">Молитва Пресвятой Богородице пред иконой Ея «Экономисса»</h3> 
+                    <p>
+                        О, Пречи́стая Влады́чице Богоро́дице, Всечестнейшая на́ша Ма́ти Игу́мение все́х правосла́вных святы́х оби́телей и́ноческаго жития́, во Святе́й Горе́ Афо́нстей и по все́й вселе́нней су́щих! Приими́ смире́нная моле́ния на́ша и принеси́ я́ ко всеще́дрому Бо́гу на́шему, да спасе́т души́ на́ша Свое́ю благода́тию. Воззри́ на ны́ милосердным Твои́м о́ком и соверши́ Сама́ о Го́споде на́ше спасе́ние, поне́же без ми́лости Спа́са на́шего и Твоего́ свята́го о на́с хода́тайства не возмо́жем окая́ннии соверши́ти своего́ спасе́ния, я́ко окаляхом житие́ на́ше в суетах мирски́х, и́бо вре́мя прибли́жися жа́твы Христо́вы и де́нь Стра́шнаго Суда́ приспе́. Мы́ же, окая́ннии, погиба́ем в бе́здне грехо́вней нераде́ния ра́ди на́шего, по рече́нному от святы́х отце́в, первонача́льников а́нгельскаго во пло́ти жития́, я́ко после́днии мона́си нераде́нием жития́ своего́ уподобятся мирски́м челове́ком, е́же и сбы́ся дне́сь, и́бо после́днее и́ночество на́ше плавает житие́м свои́м в мо́ри жите́йском, посреде́ вели́кия бу́ри и непогоды, и́бо на́ша святы́я оби́тели во прасе пребыва́ют, грехо́в бо ра́ди на́ших всепра́ведный Судия́ Госпо́дь на́ш Иису́с Христо́с та́ко благоволи́, мы́ же, недосто́йнии, не и́мамы, где́ главы́ подклони́ти.
+О, сладча́йшая на́ша Ма́ти Игу́мение! Собери́ ны́, разсеянное ста́до Христо́во, воеди́но и спаси́ правосла́вное мона́шество после́дняго ве́ка сего́, и все́х правосла́вных христиа́н сподо́би ра́йския жи́зни со а́нгелы и все́ми святы́ми во Ца́рствии Христа́ Бо́га на́шего, Ему́же че́сть и сла́ва, со Безнача́льным Его́ Отце́м и со Пресвяты́м, Благи́м и Животворя́щим Его́ Ду́хом во ве́ки веко́в. Ами́нь.
+                    </p>
+                </div>
+          </div></div>
+
+          <div class="flex flex-col mb-3 justify-center text-black text-2xl" x-data="{ open: false }">
+            <div class="wraper flex justify-center">
+                <button x-on:click="open = !open">Как можно увидеть икону вживую?</button>
+                <div class="flex flex-col justify-center ml-6">
+                    <img x-on:click="open = !open" class="block  w-[24px] h-[24px] cursor-pointer" x-bind:src="open ? 'img/minus.png' : 'img/plus.png' " alt="">
+                </div>
+            </div>
+          
+            <div x-show="open" class="text-xl mt-3 bg-[rgb(248,248,248)] p-4 text-justify">
+                Вы можете приехать в наш храм и лично помолиться перед иконой. Так же вы сможете заказать молебен перед чудотворной иконой.
+                <p>Адрес храма:</p>
+                <p>213850 Республика Беларусь, Могилевская область, Бобруйский район, агрогородок Телуша, ул. Пушкина, 22а</p>
+                <p>Проезд пригородным поездом со станции БОБРУЙСК в 7-00 утра до остановочного пункта «331 км» в течение получаса.</p>
+                
+            </div>
+          </div>
+
+          <div class="flex flex-col mb-3 justify-center text-black text-2xl" x-data="{ open: false }">
+            <div class="wraper flex justify-center">
+                <button x-on:click="open = !open">Что люди говорят про Эономиссу?</button>
+                <div class="flex flex-col justify-center ml-6">
+                    <img x-on:click="open = !open" class="block  w-[24px] h-[24px] cursor-pointer" x-bind:src="open ? 'img/minus.png' : 'img/plus.png' " alt="">
+                </div>
+            </div>
+          
+            <div x-show="open" class="text-xl mt-3 bg-[rgb(248,248,248)] p-4 text-justify">
+                <p>Хочу поделиться той радостью, которую подарила Матерь Божия ЭКОНОМИССА. Когда мы с мужем вечером приложились к образу и помолились, даже не ожидали такой скорой перемены. Муж утром проснулся и сказал, что Образ Царицы Небесной был всю ночь перед ним. А я накануне была без сил, у меня сильно болел живот, в общем, самочувствие плохое.
+                    И какое было удивление, что на следующий день У МЕНЯ НИЧЕГО НЕ БОЛЕЛО, была легкость, радость, хотелось петь. При встрече людей всех хотелось обнять, поцеловать. Я давно не чувствовала такую легкость! Дело в том, что я болею онкологией, и у меня рецидив, постоянные боли. Я уже забыла, что это такое - быть без болей, а тут ТАКОЙ ПОДАРОК! Да, мы еще строим дом. Дела шли тяжело. А тут все пошло быстро и стало ладиться. А сын, при виде Иконы, сказал: "Мама, какая красивая Икона!" Вот так Матерь Божья вошла в нашу семью и помогает нам!
+                    18.06.2014. Брест. Раба Божия Наталья  </p>
+                    <p class="text-center mt-2">***</p>
+               <p>
+                На выставке "ВЕРБНЫЙ КИРМАШ 2014"в Минске одна пожилая глубоко верующая христианка задумчиво остановилась у нашего стенда, посвященного Пушкинскому Телушанскому Свято-Никольскому храму. Поскольку она была большой почитательницей творчества Александра Сергеевича, то мы и разговорились о его поэзии в первую очередь. Рассказали ей и о нашей ЭКОНОМИССЕ.  Женщина приобрела такой же образ для себя. Мы приложили ее икону к чудотворной, благословили. В конце выставки она пришла к нам снова и рассказала, как несколько дней ЕЕ ДОМАШНЯЯ ИКОНА БЛАГОУХАЛА НЕИЗРЕЧЕННЫМ АРОМАТОМ! Это было самым настоящим чудом для образованной интеллигентной женщины. Она утвердилась в вере и стала глубокой почитательницей иконы ЭКОНОМИССА.
+                Благодарим Царицу Небесную, укрепляющую нас в вере Православной! 
+               </p>
+            </div>
+          </div>
+
+          
+    </section>
+    <section class="mt-[32px] pb-[32px] bg-[rgb(248,248,248)] max-w-screen-xl mx-auto">
+        <span class="flex justify-center text-black text-2xl pt-[16px]">Последние новости</span>
+
+        <div class="mt-10 py-[40px] px-12 bg-[rgba(223,221,221,0.76)]">
+            <a href="">
+                <h3 class="font-medium text-lg">Крещение Господне, Освящение воды, Купание в проруби</h3>
+                <p class="justify-center text-base">Праздник Крещения в Церкви всегда ассоциируется с освящением воды. Это древняя традиция. Люди верят в силу крещенской воды и массами спешат в храмы, чтобы набрать её и принести домой. И...
+                </p>
+            </a>
+            
+        </div>
+        
+
+        <div class="mt-10 py-[40px] px-12 bg-[rgba(223,221,221,0.76)]">
+            <a href="">
+                <h3 class="font-medium text-lg">Кто в наше время может спастись? Часть - 2</h3>
+                <p class="justify-center text-base">Давайте продолжим речь о том, кто в наше время может спастись! В предыдущей статье мы с Вами начали серьезный разговор о Спасении и псевдохристианском понимании его. Дело в том, что неофитам.</p>
+            </a>
+        </div>
+
+        <div class="mt-10 py-[40px] px-12 bg-[rgba(223,221,221,0.76)]">
+            <a href="">
+                <h3 class="font-medium text-lg">Кто в наше время может спастись? Часть - 1</h3>
+                <p class="justify-center text-base">Поговорим о документе ДОПОЛНЕНИЕ, который транслирует критику на современную Церковь. Взглядом искренне верующего человека посмотрим, кто в наше время может спастись?
+                </p>
+            </a>
+        </div>
+
+        <div class="max-w-screen-xl flex flex-col items-center mx-auto">
+            <a class="inline-flex w-[162px] h-[40px] bg-[rgba(223,221,221,0.76)] flex-col rounded-[3px] justify-center text-xl mt-[32px]" href=""><span class="mx-auto">Все новости</span></a>
+        </div>
+
+    </section>
+</main> 
+<footer class="max-w-screen-xl flex-col mx-auto justify-center my-[32px] border-t-2 lg:text-left">
+        <div class=" p-4 text-center text-surface dark:text-white">
+            2024 &nbsp;&nbsp; Приход Свято-Никольского храма в Телуше
+        </div>
+        <div class="flex justify-center">
+            <a href=""><img class="w-[24px] h-[24px] mr-[12px]" src="img/inst.svg" alt=""></a>
+            <a href=""><img class="w-[24px] h-[24px] mr-[12px]" src="img/tlg.svg" alt=""></a>
+            <a href=""><img class="w-[24px] h-[24px] mr-[12px]" src="img/viber.svg" alt=""></a>
+            <a href=""><img class="w-[24px] h-[24px]" src="img/whatsup.svg" alt=""></a>
+        </div>
+</footer>
+
+
+
+
+</body>
+</html>
